@@ -1,5 +1,5 @@
 import 'dart:io';
-
+// All necessary packages imported
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
   bool isLoading = false;
-
+// Logout function
   Future<void> logout() async {
     MyPrint.printOnConsole("logout");
     setState(() {
@@ -58,7 +58,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       isLoading = false;
     });
   }
-
+// Updating image of user profile
   Future<void> updateProfileImage()async{
     UserProvider userProvider = Provider.of<UserProvider>(context, listen: false);
     XFile? imageFile = await ImagePicker().pickImage(source: ImageSource.gallery,);

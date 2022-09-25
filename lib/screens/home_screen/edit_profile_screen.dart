@@ -1,5 +1,5 @@
 import 'dart:io';
-
+//All necessary Packages imported 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -48,7 +48,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       "mobile" : phoneController.text,
       "bio" : descriptionController.text,
     };
-
+// Used users collection for storing data
     await FirestoreController().firestore.collection("users").doc(userProvider.userid).update(data);
 
     UserModel? userModel = userProvider.userModel;
